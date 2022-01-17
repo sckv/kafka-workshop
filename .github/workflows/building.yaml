@@ -28,7 +28,7 @@ jobs:
             type=ref,event=branch,suffix=-latest
             type=ref,event=tag,priority=1000
       - name: Docker meta Consumer
-        id: meta-producer
+        id: meta-consumer
         uses: docker/metadata-action@v3
         with:
           images: us-central1-docker.pkg.dev/apache-kafka-337609/my-docker-registry/consumer
