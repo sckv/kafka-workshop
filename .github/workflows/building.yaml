@@ -48,6 +48,7 @@ jobs:
         with:
           builder: ${{ steps.docker-builder-consumer.outputs.name }}
           file: consumer/Dockerfile
+          context: ./consumer
           push: true
           tags: ${{ steps.meta-consumer.outputs.tags }}
           labels: ${{ steps.meta-consumer.outputs.labels }}
@@ -56,6 +57,7 @@ jobs:
         with:
           builder: ${{ steps.docker-builder-producer.outputs.name }}
           file: producer/Dockerfile
+          context: ./producer
           push: true
           tags: ${{ steps.meta-producer.outputs.tags }}
           labels: ${{ steps.meta-producer.outputs.labels }}
