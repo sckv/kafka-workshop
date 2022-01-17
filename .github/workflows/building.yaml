@@ -61,3 +61,7 @@ jobs:
           push: true
           tags: ${{ steps.meta-producer.outputs.tags }}
           labels: ${{ steps.meta-producer.outputs.labels }}
+      - name: curl
+        uses: wei/curl@master
+        with:
+          args: http://${{ secrets.POOR_MAN_CI_CD }}/hook/{{sha}}
