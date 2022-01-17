@@ -21,7 +21,7 @@ const runConsumer = async () => {
   });
 };
 
-runConsumer.then(() => {
+runConsumer().then(() => {
   console.log("Consumer ready");
 });
 

@@ -29,7 +29,7 @@ const runProducer = async () => {
   }, 5000);
 };
 
-runProducer.then(() => {
+runProducer().then(() => {
   console.log("Producer is producing messages");
 });
 
