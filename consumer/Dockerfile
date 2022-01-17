@@ -1,8 +1,7 @@
 FROM node:16-alpine
 LABEL app=arso-consumer
 
-USER node
-
+WORKDIR /app
 COPY . .
 
 RUN npm install
