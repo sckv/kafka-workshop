@@ -13,8 +13,8 @@ app.post("/hook/:sha", async (req, res) => {
   const consumerFile = fs.readFileSync(consumerFilePath, { encoding: "utf8" });
   const producerFile = fs.readFileSync(producerFilePath, { encoding: "utf8" });
 
-  const parsedConsumerFile = yaml.parse(consumerFile).toJSON();
-  const parsedProducerFile = yaml.parse(producerFile).toJSON();
+  const parsedConsumerFile = yaml.parse(consumerFile);
+  const parsedProducerFile = yaml.parse(producerFile);
 
   [
     { file: parsedConsumerFile, path: consumerFilePath },
