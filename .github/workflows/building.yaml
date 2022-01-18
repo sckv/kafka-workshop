@@ -62,4 +62,4 @@ jobs:
           tags: ${{ steps.meta-producer.outputs.tags }}
           labels: ${{ steps.meta-producer.outputs.labels }}
       - name: Update the CD
-        run: curl -X POST http://${{ secrets.POOR_MAN_CI_CD }}/hook/$(echo ${GITHUB_SHA} | cut -c1-8)
+        run: curl -X POST http://${{ secrets.POOR_MAN_CI_CD }}/hook/$(echo ${GITHUB_SHA} | cut -c1-7)
