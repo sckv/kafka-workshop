@@ -30,7 +30,7 @@ app.post("/hook/:sha", async (req, res) => {
 
   console.log(shell.exec("kubectl apply -f ./kubernetes-apps/"));
 
-  res.send(newVersionsDocs);
+  res.send({ consumer: parsedConsumerFile, producer: parsedProducerFile });
 });
 
 app.listen(port, () => {
