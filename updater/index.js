@@ -28,7 +28,7 @@ app.post("/hook/:sha", async (req, res) => {
     fs.writeFileSync(doc.path, yaml.stringify(doc.file), { encoding: "utf8" });
   });
 
-  console.log(shell.exec("kubectl apply -f ./kubernetes-apps/"));
+  console.log(shell.exec("kubectl apply -f ./kubernetes-apps/").stdout);
 
   res.send({ consumer: parsedConsumerFile, producer: parsedProducerFile });
 });
