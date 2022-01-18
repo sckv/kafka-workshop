@@ -9,7 +9,7 @@ const port = 3333;
 const producerFilePath = "./kubernetes-apps/producer-app.yaml";
 const consumerFilePath = "./kubernetes-apps/consumer-app.yaml";
 
-app.get("/hook/:sha", async (req, res) => {
+app.post("/hook/:sha", async (req, res) => {
   const consumerFile = fs.readFileSync(consumerFilePath, { encoding: "utf8" });
   const producerFile = fs.readFileSync(producerFilePath, { encoding: "utf8" });
 
